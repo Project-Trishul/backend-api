@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{{pageTitle}}</title>
+    <meta name="author" content="{{author}}" />
+    <style type="text/css">
+        * {margin:0; padding:0; text-indent:0; }
+        .p, p { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; margin:0pt; }
+        .a, a { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+        h1 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+        .s1 { color: #00F; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: underline; font-size: 12pt; }
+        .s2 { color: black; font-family:"Times New Roman", serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 12pt; }
+        li {display: block; }
+        #l1 {padding-left: 0pt;counter-reset: c1 1; }
+        #l1> li>*:first-child:before {counter-increment: c1; content: counter(c1, decimal)". "; color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+        #l1> li:first-child>*:first-child:before {counter-increment: c1 0;  }
+        #l2 {padding-left: 0pt; }
+        #l2> li>*:first-child:before {content: " "; color: black; font-family:Symbol, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l3 {padding-left: 0pt; }
+        #l3> li>*:first-child:before {content: "o "; color: black; font-family:"Courier New", monospace; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l4 {padding-left: 0pt; }
+        #l4> li>*:first-child:before {content: " "; color: black; font-family:Symbol, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l5 {padding-left: 0pt; }
+        #l5> li>*:first-child:before {content: " "; color: black; font-family:Symbol, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l6 {padding-left: 0pt; }
+        #l6> li>*:first-child:before {content: "o "; color: black; font-family:"Courier New", monospace; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l7 {padding-left: 0pt; }
+        #l7> li>*:first-child:before {content: "o "; color: black; font-family:"Courier New", monospace; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l8 {padding-left: 0pt; }
+        #l8> li>*:first-child:before {content: " "; color: black; font-family:Symbol, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l9 {padding-left: 0pt; }
+        #l9> li>*:first-child:before {content: " "; color: black; font-family:Symbol, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l10 {padding-left: 0pt; }
+        #l10> li>*:first-child:before {content: "o "; color: black; font-family:"Courier New", monospace; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+        #l11 {padding-left: 0pt; }
+        #l11> li>*:first-child:before {content: " "; color: black; font-family:Symbol, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; }
+    </style>
+</head>
+
+<body>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+    <p style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">{{name}}</p>
+    <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;"><a href="mailto:{{email}}" class="a" target="_blank">Email: {{email}}</a> Phone: {{phone}}</p>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+    <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Date: {{date}}</p>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+    <h1 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">{{reportTitle}}</h1>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+
+    <ol id="l1">
+        {{#each sections}}
+        <li data-list-text="{{@index}}.">
+            <h1 style="padding-left: 17pt;text-indent: -12pt;text-align: left;">{{sectionName}}</h1>
+            <p style="text-indent: 0pt;text-align: left;"><br/></p>
+            {{#if subsections}}
+            <ul>
+                {{#each subsections}}
+                <li data-list-text="{{bulletPoint}}">
+                    <h1 style="padding-left: 41pt;text-indent: -18pt;text-align: left;">{{subSectionName}}</h1>
+                    {{#if content}}
+                    <p>{{content}}</p>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ol>
+
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+
+    <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Thank you for your attention to this matter. If you have any questions or require further clarification, please do not hesitate to contact me.</p>
+    <p style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;line-height: 28pt;text-align: left;">Sincerely, {{name}}</p>
+    <p style="padding-left: 5pt;text-indent: 0pt;line-height: 11pt;text-align: left;"><a href="mailto:{{email}}" class="a" target="_blank">Email: </a><a href="mailto:{{email}}" target="_blank">{{email}}</a></p>
+    <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Phone: {{phone}}</p>
+</body>
+
+</html>
